@@ -57,6 +57,25 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
+      drawer: Drawer(
+        elevation: 1,
+        child: ListView(
+          children: const [
+            DrawerHeader(
+              child: Text("Welcome!"),
+            ),
+            ListTile(
+              title: Text("Home Screen"),
+            ),
+            ListTile(
+              title: Text("Main Screen"),
+            ),
+            ListTile(
+              title: Text("Sub Screen"),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

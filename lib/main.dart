@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.routeName,
       routes: {
         SplashScreen.routeName: (context) => const SplashScreen(),
