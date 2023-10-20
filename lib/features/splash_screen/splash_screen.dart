@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:udemy_lecture/features/main_screen/main_screen.dart';
 
@@ -8,12 +10,12 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(
-      const Duration(seconds: 3),
-      () {
-        Navigator.pushNamed(context, MainScreen.routeName);
-      },
-    );
+    Timer(const Duration(seconds: 3), () {
+      Navigator.pushReplacementNamed(
+        context,
+        MainScreen.routeName,
+      );
+    });
 
     return const Scaffold(
       backgroundColor: Colors.blue,

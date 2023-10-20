@@ -22,28 +22,31 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20),
+      body: Padding(
+        padding: const EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Hi!",
               style: TextStyle(
                 fontSize: 24,
               ),
             ),
-            Text(
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
               "I'm Administrator.",
               style: TextStyle(
                 fontSize: 24,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -51,10 +54,10 @@ class _MainScreenState extends State<MainScreen> {
                 Text("Jude!"),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Row(
+            const Row(
               children: [
                 Expanded(
                   child: Text("Deep Purple"),
@@ -66,6 +69,27 @@ class _MainScreenState extends State<MainScreen> {
                   child: Text("Black Sabbath"),
                 ),
               ],
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.blue,
+              ),
+              margin: const EdgeInsets.only(
+                top: 20,
+                bottom: 20,
+              ),
+              width: 300,
+              height: 100,
+              alignment: Alignment.center,
+              child: Text(
+                "Ronnie James DIO",
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.grey.shade400,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ],
         ),
