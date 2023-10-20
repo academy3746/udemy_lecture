@@ -13,6 +13,10 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   final TextEditingController _idController = TextEditingController();
 
+  String _msg = "Here is returned data.";
+
+  //final ValueNotifier<int> _notifier = ValueNotifier(0);
+
   @override
   void initState() {
     super.initState();
@@ -51,13 +55,29 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             ElevatedButton(
               onPressed: () {
-                print(_idController.text.toString());
+                setState(() {
+                  _msg = _idController.text.toString();
+                });
+                //_notifier.value = 30;
               },
               child: const Text("다음"),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            /*ValueListenableBuilder<int>(
+              valueListenable: _notifier,
+              builder: (BuildContext context, value, Widget? child) {
+                return Text("Count: $value");
+              },
+            ),*/
+            Text(
+              _msg,
+              style: const TextStyle(fontSize: 24),
             ),
           ],
         ),
