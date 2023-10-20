@@ -11,25 +11,19 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List myBand = [
-    "Led Zeppelin",
-    "Deep Purple",
-    "Black Sabbath",
-    "Oasis",
-    "Korn",
-    "Judas Priest",
-    "White Snake",
-    "Queen",
-    "The Who",
-    "KISS",
-    "Nirvana",
-    "Metallica",
-    "MegaDeth",
-    "Helloween",
-    "Stratovarius",
-    "Iron Maiden",
-    "Radiohead",
-  ];
+  final TextEditingController _idController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    _idController;
+  }
+
+  @override
+  void dispose() {
+    _idController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,14 +42,24 @@ class _MainScreenState extends State<MainScreen> {
           vertical: 20,
           horizontal: 30,
         ),
-        child: ListView.builder(
-          itemBuilder: (BuildContext context, int index) {
-            return ListTile(
-              title: Text("Hello, ${myBand[index]}!"),
-              subtitle: const Text("They are Rock Star!"),
-            );
-          },
-          itemCount: myBand.length,
+        child: Column(
+          children: [
+            TextField(
+              controller: _idController,
+              decoration: const InputDecoration(
+                labelText: "Input ID",
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print(_idController.text.toString());
+              },
+              child: const Text("다음"),
+            ),
+          ],
         ),
       ),
     );
