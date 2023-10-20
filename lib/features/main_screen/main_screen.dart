@@ -1,4 +1,7 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MainScreen extends StatefulWidget {
   static String routeName = "/main";
@@ -23,36 +26,19 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.symmetric(
+          vertical: 20,
+          horizontal: 30,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              "Hi!",
-              style: TextStyle(
-                fontSize: 24,
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
               "I'm Administrator.",
               style: TextStyle(
                 fontSize: 24,
               ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text("Hey!"),
-                Text("Jude!"),
-              ],
             ),
             const SizedBox(
               height: 20,
@@ -80,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
                 bottom: 20,
               ),
               width: 300,
-              height: 100,
+              height: 80,
               alignment: Alignment.center,
               child: Text(
                 "Ronnie James DIO",
@@ -90,6 +76,44 @@ class _MainScreenState extends State<MainScreen> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
+            ),
+            Row(
+              children: [
+                Image.asset(
+                  "assets/images/mac.jpg",
+                  width: 100,
+                  height: 100,
+                ),
+                const FaIcon(
+                  FontAwesomeIcons.music,
+                  size: 75,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+                fixedSize: const Size(
+                  100,
+                  45,
+                ),
+                elevation: 10,
+              ),
+              onPressed: () {
+                print("ElevatedButton has pressed.");
+              },
+              child: const Text(
+                "Next",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 16,
             ),
           ],
         ),
